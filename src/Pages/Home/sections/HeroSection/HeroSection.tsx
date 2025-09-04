@@ -5,8 +5,6 @@ import Typewriter from "../../../../components/Typewriter/Typewriter"
 import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
-
-import CV from "../../../../assets/pdfs/meu-curriculo.pdf"
 import AnimatedBackground from "../../../../components/AnimatedBackground/AnimatedBackground";
 
 const HeroSection: React.FC = () => {
@@ -43,7 +41,7 @@ const HeroSection: React.FC = () => {
     const handleDownload = () => {
         console.log("download")
         const link = document.createElement('a');
-        link.href = CV
+        link.href = `${import.meta.env.BASE_URL}meu-curriculo.pdf`;
         link.download = 'ViniciusLedro_CV.pdf';
         document.body.appendChild(link);
         link.click();
