@@ -1,6 +1,10 @@
 import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import ProjectCard, { ProjectCardProps } from "../../../../components/ProjectCard/ProjectCard";
 import AnimationComponent from "../../../../components/AnimationComponent/AnimationComponent";
+import projectFatrekImg from '../../../../assets/images/projectFatrek.png'
+import projectMegaImg from '../../../../assets/images/projectMega.jpg'
+import projectJogoNumerosImg from '../../../../assets/images/projectJogoNumeros.png'
+import projectChallengeAmigoSecretoImg from '../../../../assets/images/projectChallengeAmigoSecreto.png'
 
 const ProjectsSection: React.FC = () => {
 
@@ -15,7 +19,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Project Fatrek",
             subtitle: "Fev 2025 - Jul 2025",
-            srcImg: "/src/assets/images/projectFatrek.png",
+            srcImg: projectFatrekImg,
             description: "Fatreck é uma aplicação web, desenvolvida para auxiliar o corpo docente da FATEC Jacareí a disponibilizar os horários de aula de cada curso e em qual sala sera ministrada a respectiva aula de acordo com os cursos. Os alunos podem acessar essa página web e utiliza-lo para localização dentro da unidade e checar os horários de aula.",
             technologies: "Tecnologias: JavaScript, Node.js, HTML, CSS, Figma",
             websiteURL: "https://fatreck.ct.ws",
@@ -24,7 +28,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Project Megasena",
             subtitle: "Fev 2025 - Jul 2025",
-            srcImg: "/src/assets/images/projectMega.jpg",
+            srcImg: projectMegaImg,
             description: "Aplicação web full-stack desenvolvida para a consulta de resultados da Mega-Sena. O projeto consome uma API REST própria, construída com Node.js e Express, que serve os dados a partir de um banco de dados PostgreSQL. O Front-end foi desenvolvidocom foco em uma experiência de usuário limpa e responsiva.",
             technologies: "Tecnologias: JavaScript, Node.js, HTML, CSS",
             websiteURL: "https://project-megasena.vercel.app/",
@@ -33,7 +37,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Project Jogo do Número Secreto",
             subtitle: "Jun 2025 - Jul 2025",
-            srcImg: "/src/assets/images/projectJogoNumeros.png",
+            srcImg: projectJogoNumerosImg,
             description: "Este projeto foi desenvolvido como um exercício prático durante a formação Oracle Next Education (ONE). Trata-se de um jogo de adivinhação onde o objetivo do jogador é descobrir um número secreto, gerado aleatoriamente entre 1 e 10, no menor número de tentativas possível. A aplicação foi criada utilizando tecnologias web fundamentais, com toda a lógica de validação de entradas, comparação de números e feedback ao usuário implementada em JavaScript puro.",
             technologies: "Tecnologias: JavaScript, HTML, CSS",
             websiteURL: "https://secret-number-game-iota-five.vercel.app/",
@@ -42,7 +46,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Project Challenge Amigo Secreto",
             subtitle: "Aug 2025 - Aug 2025",
-            srcImg: "/src/assets/images/projectChallengeAmigoSecreto.png",
+            srcImg: projectChallengeAmigoSecretoImg,
             description: "Aplicação desenvolvida como parte de um desafio prático da formação Oracle Next Education (ONE), criada para simplificar a organização do tradicional jogo de Amigo Secreto. O projeto foi inteiramente construído com HTML, CSS e JavaScript puro, focando na manipulação do DOM e na lógica de programação. O usuário pode adicionar os nomes dos participantes dinamicamente e, com um clique, o sistema realiza o sorteio de forma aleatória e exibe os resultados.",
             technologies: "Tecnologias: JavaScript, HTML, CSS",
             websiteURL: "https://challenge-amigo-secreto-woad-xi.vercel.app/",
