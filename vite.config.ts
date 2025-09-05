@@ -7,6 +7,6 @@ export default defineConfig({
   base: "/ra2581392513013/",
   plugins: [svgr(), react()],
   build: {
-    outDir: "docs" // build vai para a pasta docs
+    outDir: "docs"
   }
 });
