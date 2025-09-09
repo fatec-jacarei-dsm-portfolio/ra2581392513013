@@ -9,14 +9,14 @@ import Menu from '@mui/material/Menu';
 import { styled } from '@mui/material';
 
 export const StyledNavLink = styled("a")(() => ({
-  color: "#ffffff",      
+  color: "#22D4FD",      
   fontFamily: "Helvetica Neue", 
   fontSize: "30px",       
   fontWeight: 500,
   cursor: "pointer",
   textDecoration: "none",
   "&:hover": {
-    color: "#38c958",
+    color: "#ffffffff",
 }}));
 
 export const StyledMobileToolbar = styled(Toolbar)(({ theme }) => ({
@@ -32,7 +32,7 @@ export const StyledMobileToolbar = styled(Toolbar)(({ theme }) => ({
 export const StyledDesktopToolbar = styled(Toolbar)(({ theme }) => ({
     display: "flex",
     justifyContent: "space-evenly",
-    backgroundColor: "#141414ff",
+    backgroundColor: "#000000ff",
     padding: "20px",
     [theme.breakpoints.up('xs')]: {
         display: "none",

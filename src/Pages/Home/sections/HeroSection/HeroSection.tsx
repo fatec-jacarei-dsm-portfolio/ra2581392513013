@@ -9,9 +9,9 @@ import AnimatedBackground from "../../../../components/AnimatedBackground/Animat
 
 const HeroSection: React.FC = () => {
 
-    const StyledImg = styled("img")(({ theme }) => ({
+    const StyledImg = styled("img")(() => ({
         width: "80%",
-        border: `1px solid ${theme.palette.primary.main}`,
+        border: "1px solid #22D4FD",
         borderRadius: "50%",
         position: "relative",
         zIndex: 1
