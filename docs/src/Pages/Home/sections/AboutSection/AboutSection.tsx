@@ -29,13 +29,7 @@ const AboutSection: React.FC = () => {
       boxShadow: "0 0 20px rgba(34, 212, 253, 0.1)", // Brilho suave atrás
     },
   }));
-
-  // 3. Estilo para destacar palavras chaves se precisar (Opcional)
-  const Highlight = styled("span")({
-    color: "#22D4FD",
-    fontWeight: "bold"
-  });
-
+  
   return (
     <SectionWrapper id="about">
       <Container maxWidth="lg">
