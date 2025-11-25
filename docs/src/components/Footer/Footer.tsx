@@ -1,9 +1,10 @@
 import { Box, Container, IconButton, Typography } from "@mui/material"
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
+import { useTranslation } from "react-i18next"; // <--- 1. Importar
 
 const Footer: React.FC = () => {
+    const { t } = useTranslation(); // <--- 2. Inicializar hook
 
     return (
         <>
@@ -16,12 +17,9 @@ const Footer: React.FC = () => {
                         <IconButton onClick={() => window.open("https://www.linkedin.com/in/vinicius-ledro")}>
                             <LinkedInIcon />
                         </IconButton>
-                        <IconButton href="mailto:ledro.ledro16@gmail.com" target="_blank">
-                            <EmailIcon />
-                        </IconButton>
                     </Box>
                     <Typography textAlign="center">
-                        © 2025 Vinícius Lêdro - Todos os direitos reservados
+                        © {new Date().getFullYear()} Vinícius Lêdro - {t('footer.rights')}
                     </Typography>
                 </Container>
             </Box>

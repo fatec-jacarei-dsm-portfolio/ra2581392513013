@@ -1,85 +1,204 @@
-import { Box, Container, Grid, Typography, styled } from "@mui/material";
-import ProjectCard, { ProjectCardProps } from "../../../../components/ProjectCard/ProjectCard";
+import { Box, Container, Grid, Typography, styled, Divider, useTheme } from "@mui/material";
+import ProjectCard from "../../../../components/ProjectCard/ProjectCard";
 import AnimationComponent from "../../../../components/AnimationComponent/AnimationComponent";
-import projectFatrekImg from '../../../../assets/images/projectFatrek.png'
-import projectMegaImg from '../../../../assets/images/projectMega.jpg'
-import projectJogoNumerosImg from '../../../../assets/images/projectJogoNumeros.png'
-import projectChallengeAmigoSecretoImg from '../../../../assets/images/projectChallengeAmigoSecreto.png'
+import { useTranslation } from "react-i18next";
+
+// Imports das Imagens
+import projectFatrekImg from '../../../../../public/assets/projectFatrek-DPhvMZu7.png';
+import projectMegaImg from '../../../../../public/assets/projectMega-BFmgG__1.jpg';
+import projectJogoNumerosImg from '../../../../../public/assets/projectJogoNumeros-B3mIIKnJ.png';
+import projectChallengeAmigoSecretoImg from '../../../../../public/assets/projectChallengeAmigoSecreto-d-4EyuTO.png';
+import projectMega2Img from '../../../../../public/assets/projectMegasena2.jpg'
+import projectInpeImg from '../../../../../public/assets/projectInpe.png'
 
 const ProjectsSection: React.FC = () => {
+    const { t } = useTranslation();
+    const theme = useTheme();
 
-    const StyledExperience = styled("div")(({ theme }) => ({
+    // --- ESTILIZAÇÃO ---
+
+    const StyledSection = styled("div")(({ theme }) => ({
         backgroundColor: theme.palette.primary.main,
+        paddingTop: "60px",
+        paddingBottom: "60px",
         position: "relative",
-        overflow: "hidden"
-
+        overflow: "hidden",
     }));
 
-    const projects = [
+    // Título das Categorias (Acadêmico, Pessoal, etc.)
+    const CategoryHeader = styled(Box)(() => ({
+        marginBottom: "40px",
+        // Removi o sublinhado colorido daqui também para ficar mais limpo
+        borderLeft: `4px solid ${theme.palette.secondary.main}`, // Apenas um detalhe lateral sutil
+        paddingLeft: "15px",
+        display: "inline-block"
+    }));
+
+    // --- DADOS DOS PROJETOS ---
+
+    const academicProjects = [
         {
-            title: "Project Fatrek",
+            title: "Fatrek",
             subtitle: "Fev 2025 - Jul 2025",
             srcImg: projectFatrekImg,
-            description: "Fatreck é uma aplicação web, desenvolvida para auxiliar o corpo docente da FATEC Jacareí a disponibilizar os horários de aula de cada curso e em qual sala sera ministrada a respectiva aula de acordo com os cursos. Os alunos podem acessar essa página web e utiliza-lo para localização dentro da unidade e checar os horários de aula.",
-            technologies: "Tecnologias: JavaScript, Node.js, HTML, CSS, Figma",
+            descriptionKey: "projects.fatrek.desc",
+            roleKey: "projects.fatrek.role",
+            technologiesKey: "projects.fatrek.tech",
             websiteURL: "https://fatreck.ct.ws",
             codeURL: "https://github.com/CRIMS0NC0DE/abp-2025-1",
         },
         {
-            title: "Project Megasena",
-            subtitle: "Fev 2025 - Jul 2025",
-            srcImg: projectMegaImg,
-            description: "Aplicação web full-stack desenvolvida para a consulta de resultados da Mega-Sena. O projeto consome uma API REST própria, construída com Node.js e Express, que serve os dados a partir de um banco de dados PostgreSQL. O Front-end foi desenvolvidocom foco em uma experiência de usuário limpa e responsiva.",
-            technologies: "Tecnologias: JavaScript, Node.js, HTML, CSS",
-            websiteURL: "https://project-megasena.vercel.app/",
-            codeURL: "https://github.com/ViniciusLedro/projectMegasena/tree/main/server%26FrontMegasena/data",
+            title: "Portal de Dados Limnológicos",
+            subtitle: "Set 2025 - Nov 2025",
+            srcImg: projectInpeImg,
+            descriptionKey: "projects.inpe.desc",
+            roleKey: "projects.inpe.role",
+            technologiesKey: "projects.inpe.tech",
+            websiteURL: "https://fatreck.ct.ws", 
+            codeURL: "https://github.com/CRIMS0NC0DE/abp-2025-2",
+        }
+    ];
+
+    const personalProjects = [
+        {
+            title: "Challenge Amigo Secreto",
+            subtitle: "Aug 2025",
+            srcImg: projectChallengeAmigoSecretoImg,
+            descriptionKey: "projects.secretFriend.desc",
+            technologiesKey: "projects.secretFriend.tech",
+            websiteURL: "https://challenge-amigo-secreto-woad-xi.vercel.app/",
+            codeURL: "https://github.com/ViniciusLedro/challengeAmigoSecreto",
         },
         {
-            title: "Project Jogo do Número Secreto",
-            subtitle: "Jun 2025 - Jul 2025",
+            title: "Jogo do Número Secreto",
+            subtitle: "Jun 2025",
             srcImg: projectJogoNumerosImg,
-            description: "Este projeto foi desenvolvido como um exercício prático durante a formação Oracle Next Education (ONE). Trata-se de um jogo de adivinhação onde o objetivo do jogador é descobrir um número secreto, gerado aleatoriamente entre 1 e 10, no menor número de tentativas possível. A aplicação foi criada utilizando tecnologias web fundamentais, com toda a lógica de validação de entradas, comparação de números e feedback ao usuário implementada em JavaScript puro.",
-            technologies: "Tecnologias: JavaScript, HTML, CSS",
+            descriptionKey: "projects.secretNumber.desc",
+            technologiesKey: "projects.secretNumber.tech",
             websiteURL: "https://secret-number-game-iota-five.vercel.app/",
             codeURL: "https://github.com/AdrianaSaty/ironhack-project1-craze-maze",
         },
         {
-            title: "Project Challenge Amigo Secreto",
-            subtitle: "Aug 2025 - Aug 2025",
-            srcImg: projectChallengeAmigoSecretoImg,
-            description: "Aplicação desenvolvida como parte de um desafio prático da formação Oracle Next Education (ONE), criada para simplificar a organização do tradicional jogo de Amigo Secreto. O projeto foi inteiramente construído com HTML, CSS e JavaScript puro, focando na manipulação do DOM e na lógica de programação. O usuário pode adicionar os nomes dos participantes dinamicamente e, com um clique, o sistema realiza o sorteio de forma aleatória e exibe os resultados.",
-            technologies: "Tecnologias: JavaScript, HTML, CSS",
-            websiteURL: "https://challenge-amigo-secreto-woad-xi.vercel.app/",
-            codeURL: "https://github.com/ViniciusLedro/challengeAmigoSecreto",
+            title: "Megasena",
+            subtitle: "Jul 2025",
+            srcImg: projectMegaImg,
+            descriptionKey: "projects.megasena.desc",
+            technologiesKey: "projects.megasena.tech",
+            websiteURL: "https://project-megasena.vercel.app/",
+            codeURL: "https://github.com/ViniciusLedro/projectMegasena",
         },
-    ]
+        {
+            title: "Sorteio Megasena",
+            subtitle: "Nov 2025",
+            srcImg: projectMega2Img,
+            descriptionKey: "projects.sorteioMegasena.desc",
+            technologiesKey: "projects.sorteioMegasena.tech",
+            websiteURL: "https://project-megasena.vercel.app/",
+            codeURL: "https://github.com/ViniciusLedro/projectPalpitesMegasena2",
+        },
+    ];
+
+    const professionalProjects: any[] = [];
+
+    // --- FUNÇÃO DE RENDERIZAÇÃO ---
+    const renderCategory = (title: string, list: any[]) => {
+        if (list.length === 0) return null;
+
+        return (
+            <Box mb={8}>
+                <CategoryHeader>
+                    <Typography variant="h4" fontWeight={500} color="primary.contrastText">
+                        {title}
+                    </Typography>
+                </CategoryHeader>
+                
+                <Grid container spacing={4} alignItems="stretch">
+                    {list.map((project, index) => {
+                        
+                        // --- LÓGICA DE FORMATAÇÃO DO TEXTO ---
+                        let descriptionContent: React.ReactNode;
+
+                        if (project.roleKey) {
+                            const roleFullText = t(project.roleKey);
+                            const parts = roleFullText.split(':'); 
+                            const label = parts[0]; 
+                            const content = parts.slice(1).join(':'); 
+
+                            descriptionContent = (
+                                <span>
+                                    {t(project.descriptionKey)}
+                                    <br /><br />
+                                    {/* CORRIGIDO: Removi a cor azul, deixei apenas negrito */}
+                                    <strong>
+                                        {label}:
+                                    </strong>
+                                    {content}
+                                </span>
+                            );
+                        } else {
+                            descriptionContent = t(project.descriptionKey);
+                        }
+
+                        return (
+                            <Grid item md={6} xs={12} key={index} sx={{ display: "flex" }}>
+                                <Box sx={{ width: "100%", display: "flex" }}>
+                                    <AnimationComponent moveDirection={index % 2 === 0 ? "right" : "left"}>
+                                        <Box sx={{ 
+                                            height: "100%",
+                                            "& .MuiCard-root": {
+                                                height: "100%",
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                justifyContent: "space-between"
+                                            }
+                                        }}>
+                                            <ProjectCard
+                                                title={project.title}
+                                                subtitle={project.subtitle}
+                                                srcImg={project.srcImg}
+                                                description={descriptionContent as any}
+                                                technologies={t(project.technologiesKey)}
+                                                websiteURL={project.websiteURL}
+                                                codeURL={project.codeURL}
+                                            />
+                                        </Box>
+                                    </AnimationComponent>
+                                </Box>
+                            </Grid>
+                        );
+                    })}
+                </Grid>
+            </Box>
+        );
+    };
 
     return (
-        <StyledExperience>
+        <StyledSection id="projects">
             <Container maxWidth="lg">
-                <Box id="projects" pt={5} pb={3}>
-                    <Typography variant="h2" textAlign="center" color="primary.contrastText">Projects</Typography>
+                
+                <Box pb={5} textAlign="center">
+                    <Typography variant="h2" color="primary.contrastText">
+                        {t('projects.title')}
+                    </Typography>
                 </Box>
-                <Grid container spacing={5} pb={3}>
-                    {projects.map((project: ProjectCardProps, index: number) => (
-                        <Grid item md={6} key={index}>
-                            <AnimationComponent moveDirection={index % 2 == 0 ? "right" : "left"}>
-                                <ProjectCard
-                                    title={project.title}
-                                    subtitle={project.subtitle}
-                                    srcImg={project.srcImg}
-                                    description={project.description}
-                                    technologies={project.technologies}
-                                    websiteURL={project.websiteURL}
-                                    codeURL={project.codeURL}
-                                />
-                            </AnimationComponent>
-                        </Grid>
-                    ))}
-                </Grid>
+
+                {renderCategory(t('projects.categories.academic'), academicProjects)}
+
+                {academicProjects.length > 0 && personalProjects.length > 0 && (
+                    <Divider sx={{ backgroundColor: "rgba(255,255,255,0.2)", mb: 6 }} />
+                )}
+
+                {renderCategory(t('projects.categories.personal'), personalProjects)}
+
+                {personalProjects.length > 0 && professionalProjects.length > 0 && (
+                    <Divider sx={{ backgroundColor: "rgba(255,255,255,0.2)", mb: 6 }} />
+                )}
+                
+                {renderCategory(t('projects.categories.professional'), professionalProjects)}
+
             </Container>
-        </StyledExperience>
+        </StyledSection>
     )
 }
 
-export default ProjectsSection
+export default ProjectsSection;
