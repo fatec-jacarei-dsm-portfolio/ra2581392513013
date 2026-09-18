@@ -1,10 +1,10 @@
 # Portifólio de Projetos - Fatec Jacareí
 ### Aluno: Vinícius de Oliveira Lêdro  
 ### Curso: Desenvolvimento de Software Multiplataforma  
-### Turma: 1º Semestre de 2025
+### Turma: 4º Semestre de 2025
 
 ---
 
 ### Portfólio Online  
 [🔗 **Acesse o Portfólio**](https://fatec-jacarei-dsm-portfolio.github.io/ra2581392513013/)  
-[🎤 **Pitch de Apresentação**](https://youtu.be/subYAwhxq6M)
+[🎤 **Pitch de Apresentação**]()
