@@ -8,8 +8,9 @@ import projectFatrekImg from '../../../../../public/assets/projectFatrek-DPhvMZu
 import projectMegaImg from '../../../../../public/assets/projectMega-BFmgG__1.jpg';
 import projectJogoNumerosImg from '../../../../../public/assets/projectJogoNumeros-B3mIIKnJ.png';
 import projectChallengeAmigoSecretoImg from '../../../../../public/assets/projectChallengeAmigoSecreto-d-4EyuTO.png';
-import projectMega2Img from '../../../../../public/assets/projectMegasena2.jpg'
-import projectInpeImg from '../../../../../public/assets/projectInpe.png'
+import projectMega2Img from '../../../../../public/assets/projectMegasena2.jpg';
+import projectInpeImg from '../../../../../public/assets/projectInpe.png';
+import projectValleImg from '../../../../../assets/project1000Vale.png';
 
 const ProjectsSection: React.FC = () => {
     const { t } = useTranslation();
@@ -56,7 +57,18 @@ const ProjectsSection: React.FC = () => {
             technologiesKey: "projects.inpe.tech",
             websiteURL: "https://fatreck.ct.ws", 
             codeURL: "https://github.com/CRIMS0NC0DE/abp-2025-2",
-        }
+        },
+        {
+            title: "1000 Valle Multimarcas",
+            subtitle: "Fev 2026 - Jul 2026",
+            srcImg: projectValleImg,
+            descriptionKey: "projects.valle.desc",
+            roleKey: "projects.valle.role",
+            technologiesKey: "projects.valle.tech",
+            websiteURL: "",
+            codeURL: "https://github.com/CRIMS0NC0DE/3DSM-ABP-2026-1",
+         }
+
     ];
 
     const personalProjects = [

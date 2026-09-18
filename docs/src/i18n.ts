@@ -58,6 +58,11 @@ const resources = {
           tech: "Tecnologias: React, Node.js TypeScript, Docker, PortgreSQL",
           role: "Minha contribuição: Como Product Owner, fui responsável pela definição do escopo, gestão do backlog do produto e alinhamento entre a equipe técnica e o focal point."
         },
+        valle: {
+          desc: "Sistema web desenvolvido para a 1000 Valle Multimarcas com foco no gerenciamento de leads, acompanhamento de vendas e visualização de indicadores por meio de dashboards.",
+          tech: "Tecnologias: React, TypeScript, Node.js, PostgreSQL, Docker, Prisma, JWT e RBAC",
+          role: "Minha contribuição: Atuei como Product Owner, participando do levantamento e definição de requisitos, organização e priorização do backlog, acompanhamento das entregas e alinhamento entre as necessidades do negócio e a equipe de desenvolvimento."
+        },
         megasena: {
           desc: "Aplicação full-stack para consulta de resultados da Mega-Sena. Consome API própria em Node.js/Express com banco PostgreSQL.",
           tech: "Tecnologias: JavaScript, Node.js, HTML, CSS"
@@ -135,6 +140,11 @@ const resources = {
           desc: "Web application for visualizing limnological and meteorological data from Furnas reservoirs (SIMA). Organizes data into a clean interface with filters and custom queries.",
           tech: "Technologies: React, Node.js, TypeScript, Docker, PostgreSQL",
           role: "My role: As Product Owner, I was responsible for scope definition, product backlog management, and alignment between the technical team and focal point."
+        },
+        valle: {
+          desc: "Web system developed for 1000 Valle Multimarcas, focused on lead management, sales tracking, and performance monitoring through analytical dashboards.",
+          tech: "Technologies: React, TypeScript, Node.js, PostgreSQL, Docker, Prisma, JWT, and RBAC",
+          role: "My role: Acted as Product Owner, contributing to requirements gathering and definition, backlog organization and prioritization, delivery tracking, and alignment between business needs and the development team."
         },
         megasena: {
           desc: "Full-stack application to check Mega-Sena lottery results. Consumes a custom Node.js/Express API with PostgreSQL database.",
