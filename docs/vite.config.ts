@@ -1,13 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import svgr from "vite-plugin-svgr";
 
-// https://vitejs.dev/config/
+// O GitHub Pages publica a pasta docs/ da branch main em
+// https://fatec-jacarei-dsm-portfolio.github.io/ra2581392513013/
 export default defineConfig({
   base: "/ra2581392513013/",
-  plugins: [svgr(), react()],
+  plugins: [react()],
   build: {
-    outDir: "./",
-    emptyOutDir: false
-  }
+    outDir: "docs",
+    emptyOutDir: true,
+  },
 });
